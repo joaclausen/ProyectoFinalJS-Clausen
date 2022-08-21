@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+header{
+    nav{
+        opacity: 50%;
+        &:hover{
+            opacity: 100%;
+        }
+        .container-fluid{
+            flex-direction: row-reverse;
+            .navbar-brand{
+                font-family: lobster;
+                color: white;
+            }
+            
+        }
+    }
+}

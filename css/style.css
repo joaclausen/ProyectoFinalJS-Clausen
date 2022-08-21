@@ -1,3 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 * {
   padding: 0;
   margin: 0; }
+
+.bodyindex {
+  background-image: url("https://images.unsplash.com/photo-1579104848884-e28cac5ffa99?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80"); }
+
+header nav {
+  opacity: 50%; }
+  header nav:hover {
+    opacity: 100%; }
+  header nav .container-fluid {
+    flex-direction: row-reverse; }
+    header nav .container-fluid .navbar-brand {
+      font-family: lobster;
+      color: white; }
+
+.mainindex h1 {
+  font-size: 10vw;
+  text-align: center;
+  color: white; }
+
+.mainindex p {
+  text-align: center;
+  color: white;
+  font-size: 2vw; }
+
+.mainindex .btn a {
+  text-decoration: none;
+  color: white; }
