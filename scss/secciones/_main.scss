@@ -9,10 +9,42 @@
         color: white;
         font-size: 2vw;
     }
-    .btn{
+    .btn{ 
         a{
             text-decoration: none;
             color: white;
         }
     }
+}
+
+.mainListas{
+    .botones{
+        padding:20% 20% 20% 20%;
+        button{
+            a{
+                text-decoration: none;
+                color: white;
+            }
+        }
+    }
+    @media (max-width: 800px) {
+        .botones{
+            display: flex !important;
+            width: 100vw;
+            height: 80vh;
+            flex-direction: column;
+        }
+    }
+}
+
+.mainCrear{
+    text-align: center;
+    padding: 10% 10% 10% 10%;
+    .form-control{
+        text-align: center;
+    }
+}
+
+.mainCreadas{
+    padding: 5% 5% 5% 5%;
 }

@@ -4,26 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>DuckSoft | Inicio</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>DuckSoft | Listas</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 </head>
-<body class="bodyindex">
+<body class="bodyCreadas">
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
-              <a class="navbar-brand" href="index.html">DuckSoft</a>
+              <a class="navbar-brand" href="../index.html">DuckSoft</a>
               <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                    <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="pages/listas.html">Listas</a>
+                    <a class="nav-link active" aria-current="page" href="listas.html">Listas</a>
                   </li>
                 </ul>
               </div>
@@ -31,18 +31,36 @@
           </nav>
     </header>
 
-    <main class="mainindex">
-        <h1>
-            Bienvenido
-        </h1>
-        <p>
-            Cree listas de todo tipo para organizarse mejor.
-        </p>
-        <div class="d-grid col-1 col-sm-3 col-6 mx-auto">
-            <button class="btn btn-primary btn-lg" type="button"><a href="pages/listas.html">COMIENCE</a></button>
-          </div>
+    <main class="mainCreadas">
+      <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Título</th>
+            <th scope="col">Fecha Inicio</th>
+            <th scope="col">Fecha Fin</th>
+            <th scope="col">Calificacion</th>
+          </tr>
+        </thead>
+        <tbody id="campo">
+          <!-- cada tr representa una fila y td representa la columna -->
+          <!-- ejemplo de uso:
+          <tr>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr> 
+          -->
+        </tbody>
+      </table>
     </main>
 
+    <script src="../js/objetos.js"></script>
+    <script src="../js/creadas.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
 </html>
