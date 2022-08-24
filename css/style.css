@@ -21,6 +21,8 @@ header nav {
     header nav .container-fluid .navbar-brand {
       font-family: lobster;
       color: white; }
+    header nav .container-fluid .logotipo {
+      zoom: 5%; }
 
 .mainindex h1 {
   font-size: 10vw;

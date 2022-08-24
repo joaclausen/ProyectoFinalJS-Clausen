@@ -34,3 +34,4 @@ if (listaElementosGuardados==""){
         campo.append(tr);
     }
 }
+//a partir de aca comienza el codigo para calcular promedio de dias y calificaciones:
