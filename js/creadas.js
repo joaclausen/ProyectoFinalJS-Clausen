@@ -66,8 +66,26 @@ if (listaElementosGuardados==null || listaElementosGuardados==""){
 let borrar = document.getElementById("borrar");
 borrar.addEventListener("click", borrarLista);
 function borrarLista(){
-    localStorage.removeItem("listaElementos");
-    localStorage.removeItem('diasTotales');
-    localStorage.removeItem('calificaciones');
-    location.reload()
+    Swal.fire({
+        title: 'Está seguro de eliminar la lista?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Sí',
+        cancelButtonText: 'No'
+    }).then((result) => {
+
+        if (result.isConfirmed) {
+            localStorage.removeItem("listaElementos");
+            localStorage.removeItem('diasTotales');
+            localStorage.removeItem('calificaciones');
+            Swal.fire({
+                title: 'Borrado!',
+                icon: 'success',
+                text: 'La lista ha sido borrada'
+            }).then((result)=> {
+                //la pagina se recarga solo cuando se apreta el ok
+                location.reload()
+            })
+        }
+    })
 }

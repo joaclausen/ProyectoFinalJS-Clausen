@@ -38,9 +38,16 @@ if (listaElementosGuardados==null || listaElementosGuardados==""){
     let boton = document.getElementById("botonSubmit");
     boton.addEventListener("click", exito);
     function exito(){
-        //recargo pagina y aviso que se cargo correctamente:
-        location.reload();
-        alert("Elemento creado correctamente!");
+        //aviso que se cargo correctamente y recargo la pagina
+        Swal.fire({
+            title: 'Elemento añadido!',
+            text: 'El elemento fue añadido a la lista satisfactoriamente',
+            icon: 'success',
+            confirmButtonText: ' Ok '
+        }).then((result)=> {
+            //la pagina se recarga solo cuando se apreta el ok
+            location.reload()
+        })
     }
 }else{
     //en el caso de que si exista cargo los elementos a mi pagina "creadas.html"
@@ -74,8 +81,15 @@ if (listaElementosGuardados==null || listaElementosGuardados==""){
     let boton = document.getElementById("botonSubmit");
     boton.addEventListener("click", exito);
     function exito(){
-        //recargo pagina y aviso que se cargo correctamente:
-        location.reload();
-        alert("Elemento creado correctamente!");
+        //aviso que se cargo correctamente y recargo la pagina
+        Swal.fire({
+            title: 'Elemento añadido!',
+            text: 'El elemento fue añadido a la lista satisfactoriamente',
+            icon: 'success',
+            confirmButtonText: ' Ok '
+        }).then((result)=> {
+            //la pagina se recarga solo cuando se apreta el ok
+            location.reload()
+        })
     }
 }
