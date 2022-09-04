@@ -35,10 +35,21 @@
           </nav>
     </header>
 
-    <main class="mainBuscar">
-
+    <main id="mainBuscar" class="mainBuscar">
+        <form id="buscador" class="d-flex" role="search">
+            <input class="form-control me-2" id="textoBuscado" type="search" placeholder="Search" aria-label="Search">
+            <br>
+            <button id="boton" class="btn btn-outline-success d-grid col-1 col-sm-3 col-6 mx-auto" type="submit">Search</button>
+        </form>
+        <div id="resultados" class="container">
+            <ul id="pelis"></ul>
+        </div>
     </main>
-
+    
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="../js/api.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
 </html>

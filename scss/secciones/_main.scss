@@ -49,3 +49,40 @@
     padding: 5% 5% 5% 5%;
 }
 
+.mainBuscar{
+    .d-flex{
+        padding: 5% 5% 5% 5%;
+        flex-direction: column !important;
+    }
+    #pelis{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        li{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            list-style: none;
+            margin: 10px;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            background: #27272727;
+            img{
+                max-width: 300px;
+                border-radius: 12px;
+            }
+            h2{
+                color: #fff;
+                font-size: 1.8em;
+                padding: 15px 10px 0;
+                margin-top: auto;
+            }
+            h3{
+                color: #fff;
+                font-size: 1em;
+            }
+        }
+    }
+}
