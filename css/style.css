@@ -12,6 +12,9 @@
 .bodyCreadas {
   background-color: black; }
 
+.bodyBuscar {
+  background-color: black; }
+
 header nav {
   opacity: 50%; }
   header nav:hover {
