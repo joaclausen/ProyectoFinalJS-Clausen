@@ -57,9 +57,17 @@ function buscarElemento(e){
 
             if(imagen != undefined){
 
-                const resultado = `<li><img src="${imagen}"> <h2>${nombre}</h2><br><h3>${anio}</h3></li>`
+                const resultado = `<li><img src="${imagen}"><h2>${nombre}</h2><br><h3>${anio}</h3><br><button id="botonAñadir" class="btn btn-outline-success d-grid col-1 col-sm-3 col-6 mx-auto" type="submit">Añadir</button></li>`
 
                 document.querySelector('#pelis').innerHTML += resultado;
+
+                boton = document.querySelector('#botonAñadir');
+
+                boton.addEventListener("submit", añadirElemento);
+
+                function añadirElemento(){
+                    console.log("funciona");
+                };
 
             }
 
