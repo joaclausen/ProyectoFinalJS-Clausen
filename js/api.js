@@ -57,16 +57,49 @@ function buscarElemento(e){
 
             if(imagen != undefined){
 
-                const resultado = `<li><img src="${imagen}"><h2>${nombre}</h2><br><h3>${anio}</h3><br><button id="botonAñadir" class="btn btn-outline-success d-grid col-1 col-sm-3 col-6 mx-auto" type="submit">Añadir</button></li>`
-
+                const resultado = 
+                `<li>
+                    <img src="${imagen}">
+                    <h2>${nombre}</h2>
+                    <br>
+                    <h3>${anio}</h3>
+                    <br>
+                    <button id="watchlist" class="btn btn-outline-success d-grid col-1 col-sm-3 col-6 mx-auto" type="submit">Añadir a la watchlist</button>
+                    <br>
+                    <button id="watched" class="btn btn-outline-success d-grid col-1 col-sm-3 col-6 mx-auto" type="submit">Añadir a terminadas</button>
+                    </li>`
+                //concatenamos en el código:
                 document.querySelector('#pelis').innerHTML += resultado;
 
-                boton = document.querySelector('#botonAñadir');
+                //obtenemos el id de watchlist y watched en caso del que el usuario elija una opción u otra:
+                let watchlist = document.getElementById("watchlist");
+                let watched = document.getElementById("watched");
+                //las dos posibilidades, o añade a la watchlist o a las terminadas:
+                watchlist.addEventListener("click", añadirWatchlist);
+                watched.addEventListener("click", añadirWatched);
 
-                boton.addEventListener("submit", añadirElemento);
-
-                function añadirElemento(){
+                function añadirWatchlist(){
                     console.log("funciona");
+                }
+
+                async function añadirWatched(){
+                    const { value: formValues } = await Swal.fire({
+                        title: 'Multiple inputs',
+                        html:
+                          '<input id="swal-input1" class="swal2-input">' +
+                          '<input id="swal-input2" class="swal2-input">',
+                        focusConfirm: false,
+                        preConfirm: () => {
+                          return [
+                            document.getElementById('swal-input1').value,
+                            document.getElementById('swal-input2').value
+                          ]
+                        }
+                      })
+                      
+                      if (formValues) {
+                        Swal.fire(JSON.stringify(formValues))
+                      }
                 };
 
             }
