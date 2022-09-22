@@ -70,11 +70,8 @@ function buscarMedia(e){
                                     '<option>Terminado</option>'+
                                     '<option>En Progreso</option>'+
                                 '</select>'+
-                                //Fechas:
-                                '<br>Fecha inicio: <input type="date" id="swal-input1" class="swal2-input">' +
-                                '<br>Fecha fin: <input type="date" id="swal-input2" class="swal2-input">'+
                                 //Calificación:
-                                '<br><label for="nota">Calificación:&nbsp;</label>'+
+                                '<br><br><label for="nota">Calificación:&nbsp;</label>'+
                                 '<select name="nota" id="nota">'+
                                     '<option>1</option>'+
                                     '<option>2</option>'+
@@ -87,14 +84,16 @@ function buscarMedia(e){
                                     '<option>9</option>'+
                                     '<option>10</option>'+
                                 '</select>'+
-                                //Reseña:
-                                '<br>Reseña: <input type="text" id="swal-input3" class="swal2-input">',
+                                //Fecha:
+                                '<br><br>Fecha inicio: <input type="date" id="fechainicio" class="fechainicio">' +
+                                '<br><br>Fecha fin: <input type="date" id="fechafin" class="fechafin">',
                             focusConfirm: false,
                             preConfirm: () => {
                                 return [
                                     document.getElementById('estado').value,
-                                    document.getElementById('swal-input1').value,
-                                    document.getElementById('swal-input2').value
+                                    document.getElementById('nota').value,
+                                    document.getElementById('fechainicio').value,
+                                    document.getElementById('fechafin').value
                                 ]
                             }
                         })  
