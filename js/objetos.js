@@ -1,9 +1,10 @@
 class Elemento{
-    constructor(nombre, fechaInicio, fechaFin, calificacion, id){
+    constructor(nombre, estado, fechaInicio, fechaFin, calificacion, review){
         this.nombre = nombre;
+        this.estado = estado;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
         this.calificacion = calificacion;
-        this.id = id;
+        this.review = review;
     }
 }
