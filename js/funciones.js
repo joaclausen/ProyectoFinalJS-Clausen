@@ -1,5 +1,9 @@
 function buscarMedia(e){
 
+    var elemento;
+    var listaElementos=[];
+    var nombreReal;
+
     e.preventDefault();
 
     let texto = e.target;
@@ -41,11 +45,10 @@ function buscarMedia(e){
             //en caso de que si tengan imagen recien ahi lo imprimimos en el dom
 
             if(imagen != undefined){
-
                 const resultado = 
                 `<li>
                     <img src="${imagen}">
-                    <h2>${nombre}</h2>
+                    <h2 id="nombreReal" class="nombreReal">${nombre}</h2>
                     <br>
                     <h3>${anio}</h3>
                     <br>
@@ -60,8 +63,9 @@ function buscarMedia(e){
                 for (i of botones){
                     i.addEventListener('click', añadirElemento);
                     async function añadirElemento(){
+                        nombreReal = i.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.innerHTML;
                         const { value: formValues } = await Swal.fire({
-                            title: 'Multiple inputs',
+                            title: 'Cargue el elemento:',
                             html:
                                 //Estado:
                                 '<label for="estado">Estado:&nbsp;</label>'+
@@ -80,7 +84,7 @@ function buscarMedia(e){
                                     '<option>5</option>'+
                                     '<option>6</option>'+
                                     '<option>7</option>'+
-                                    '<option>8</option>'+
+                                    '<option>8</option>'+   
                                     '<option>9</option>'+
                                     '<option>10</option>'+
                                 '</select>'+
@@ -90,15 +94,26 @@ function buscarMedia(e){
                             focusConfirm: false,
                             preConfirm: () => {
                                 return [
+                                    // nombreReal = document.getElementById("nombreReal").innerHTML,
+                                    elemento = new Elemento(nombreReal, 
                                     document.getElementById('estado').value,
-                                    document.getElementById('nota').value,
-                                    document.getElementById('fechainicio').value,
-                                    document.getElementById('fechafin').value
+                                    document.getElementById('fechainicio').value, 
+                                    document.getElementById('fechafin').value, 
+                                    document.getElementById('nota').value),
                                 ]
-                            }
+                            },
                         })  
                         if (formValues) {
-                            Swal.fire(JSON.stringify(formValues))
+                            Swal.fire(
+                                'Carga exitosa!',
+                                'Los elementos fueron cargados exitosamente en la lista de elementos',
+                                'success'
+                            ).then((result)=>{
+                                listaElementos = JSON.parse(localStorage.getItem('listaElementos')) || [];
+                                console.log(listaElementos);
+                                listaElementos.push(elemento);
+                                // localStorage.setItem("listaElementos", listaElementos);
+                            })
                         }
                     };
                 }
