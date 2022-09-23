@@ -63,7 +63,6 @@ function buscarMedia(e){
                 for (i of botones){
                     i.addEventListener('click', añadirElemento);
                     async function añadirElemento(){
-                        nombreReal = i.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.innerHTML;
                         const { value: formValues } = await Swal.fire({
                             title: 'Cargue el elemento:',
                             html:
@@ -94,7 +93,8 @@ function buscarMedia(e){
                             focusConfirm: false,
                             preConfirm: () => {
                                 return [
-                                    // nombreReal = document.getElementById("nombreReal").innerHTML,
+                                    //problema: solo lee el primer nombre de los resultados, solamente puedo usar este metodo del id sino me retorna cualquier nombre:
+                                    nombreReal = document.getElementById("nombreReal").innerHTML,
                                     elemento = new Elemento(nombreReal, 
                                     document.getElementById('estado').value,
                                     document.getElementById('fechainicio').value, 
