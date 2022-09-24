@@ -1,5 +1,4 @@
 function buscarMedia(e){
-
     var elemento;
     var listaElementos=[];
     var nombreReal;
@@ -12,9 +11,9 @@ function buscarMedia(e){
 
     let textoBuscado = texto.children[0].value;
 
-    //dato importante siempre que llames a la funcion buscar a limpiar el dom para agregarle los nuevos elementos
+    //dato importante siempre que llamo a la funcion buscar a limpiar el dom para agregarle los nuevos elementos
 
-    //de esta forma te evitas codigo de mas incluyendo ese linea aca y listo
+    //de esta forma te evito codigo de mas incluyendo ese linea aca y listo
 
     document.querySelector('#pelis').innerHTML = "";
 
@@ -26,7 +25,7 @@ function buscarMedia(e){
 
     .then(data => {
 
-        //creacion de los elementos que conformaran la lista ()
+        //creacion de los elementos que conformaran la lista 
 
         const list = data.d;
 
@@ -46,9 +45,9 @@ function buscarMedia(e){
 
             if(imagen != undefined){
                 const resultado = 
-                `<li>
+                `<li class="resultado">
                     <img src="${imagen}">
-                    <h2 id="nombreReal" class="nombreReal">${nombre}</h2>
+                    <h2 id="nombreReal">${nombre}</h2>
                     <br>
                     <h3>${anio}</h3>
                     <br>
@@ -59,6 +58,7 @@ function buscarMedia(e){
 
                 //obtenemos todos los botones "Añadir a la lista" e iteramos en cada uno para que el usuario pueda añadir cualquiera de los resultados a su lista:
                 let botones = document.getElementsByClassName("botones");
+
                 //añade a la lista:
                 for (i of botones){
                     i.addEventListener('click', añadirElemento);
@@ -76,14 +76,15 @@ function buscarMedia(e){
                                 //Calificación:
                                 '<br><br><label for="nota">Calificación:&nbsp;</label>'+
                                 '<select name="nota" id="nota">'+
+                                    '<option>-</option>'+
                                     '<option>1</option>'+
                                     '<option>2</option>'+
                                     '<option>3</option>'+
                                     '<option>4</option>'+
-                                    '<option>5</option>'+
                                     '<option>6</option>'+
+                                    '<option>5</option>'+
                                     '<option>7</option>'+
-                                    '<option>8</option>'+   
+                                    '<option>8</option>'+
                                     '<option>9</option>'+
                                     '<option>10</option>'+
                                 '</select>'+
@@ -93,8 +94,8 @@ function buscarMedia(e){
                             focusConfirm: false,
                             preConfirm: () => {
                                 return [
-                                    //problema: solo lee el primer nombre de los resultados, solamente puedo usar este metodo del id sino me retorna cualquier nombre:
-                                    nombreReal = document.getElementById("nombreReal").innerHTML,
+                                    //problema: solamente toma bien el nombre del primer resultado, he intentado de todo y no he podido solucionar esto
+                                    nombreReal = document.getElementById('nombreReal').innerHTML,
                                     elemento = new Elemento(nombreReal, 
                                     document.getElementById('estado').value,
                                     document.getElementById('fechainicio').value, 
@@ -109,10 +110,11 @@ function buscarMedia(e){
                                 'Los elementos fueron cargados exitosamente en la lista de elementos',
                                 'success'
                             ).then((result)=>{
+                                //se carga el elemento a la lista de elementos (si no existe se inicializa):
                                 listaElementos = JSON.parse(localStorage.getItem('listaElementos')) || [];
-                                console.log(listaElementos);
                                 listaElementos.push(elemento);
-                                // localStorage.setItem("listaElementos", listaElementos);
+                                const enJSON    = JSON.stringify(listaElementos);
+                                localStorage.setItem("listaElementos", enJSON);
                             })
                         }
                     };
