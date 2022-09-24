@@ -71,7 +71,6 @@ function buscarMedia(e){
                                 '<select name="estado" id="estado">'+
                                     '<option>Pendiente</option>'+
                                     '<option>Terminado</option>'+
-                                    '<option>En Progreso</option>'+
                                 '</select>'+
                                 //Calificación:
                                 '<br><br><label for="nota">Calificación:&nbsp;</label>'+
